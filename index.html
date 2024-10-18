@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>IntervalTimer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main">
+
+        <!-- Startsida -->
+        <!-- <section class="page page--landing" id="landing"> -->
+        <section class="page page--landing" id="landing" style="display: none;">
+            <div class="landing-wrapper">
+                <figure class="landing-animatedLogo">
+                    <div class="line line--1"></div>
+                    <div class="line line--2"></div>
+                    <div class="line line--3"></div>
+                    <div class="line line--4"></div>
+                </figure>
+                <h1 class="landing-title">INTERVAL</h1>
+                <h3 class="landing-tagline">For all your timing needs</h3>
+            </div>
+        </section>
+
+        <!-- set timer-sida -->
+        <!-- set timer-sida -->
+
+        
+        <!-- <section class="page page--setTimer" id="setTimer" style="display: none;"> -->
+            <section class="page page--setTimer" id="setTimer"> 
+                
+        <!-- set timer-sida -->
+        <!-- set timer-sida -->                
+                
+
+            <button class="navMenu-openBtn">
+                <figure class="navMenu-icon">
+                    <div class="navMenu-icon__column navMenu-icon__column--1"></div>
+                    <div class="navMenu-icon__column navMenu-icon__column--2"></div>
+                    <div class="navMenu-icon__column navMenu-icon__column--3"></div>
+                    <div class="navMenu-icon__column navMenu-icon__column--4"></div>                    
+                </figure>
+            </button>
+
+            <div class="setTimer-wrapper">
+                <figure class="setTimer-timer">
+                    <div class="setTimer-timer__hand setTimer-timer__hand--hour"></div>
+                    <div class="setTimer-timer__hand setTimer-timer__hand--minute"></div>
+
+                    <div class="setTimer-timer__mark"></div>
+                </figure>
+            </div>
+
+            <button class="setTimer-btn">
+                START TIMER
+            </button>
+
+        </section>
+
+
+        <!-- analog timer-sida -->
+        <!-- analog timer-sida -->
+        
+        <section class="page page--analog" id="analog-timer" style="display: none;">
+        <!-- <section class="page page--analog" id="analog-timer">  -->
+                
+        <!-- analog timer-sida -->
+        <!-- analog timer-sida -->
+
+        <button class="navMenu-openBtn">
+            <figure class="navMenu-icon">
+                <div class="navMenu-icon__column navMenu-icon__column--1"></div>
+                <div class="navMenu-icon__column navMenu-icon__column--2"></div>
+                <div class="navMenu-icon__column navMenu-icon__column--3"></div>
+                <div class="navMenu-icon__column navMenu-icon__column--4"></div>                    
+            </figure>
+        </button>
+
+            <h2 class="timerPage--title">Interval</h2>
+
+            <div class="page--analog__timerContainer">
+
+            </div>
+
+            <button class="abortTimer-btn">
+                ABORT TIMER
+            </button>
+
+        </section>
+
+        <!-- digital timer-sida -->
+        <!-- digital timer-sida -->
+
+
+        <section class="page page--digital" id="digital-timer" style="display: none;">
+        <!-- <section class="page page--digital" id="digital-timer"> -->
+
+        <!-- digital timer-sida -->
+        <!-- digital timer-sida -->
+
+
+
+        <button class="navMenu-openBtn">
+            <figure class="navMenu-icon">
+                <div class="navMenu-icon__column navMenu-icon__column--1"></div>
+                <div class="navMenu-icon__column navMenu-icon__column--2"></div>
+                <div class="navMenu-icon__column navMenu-icon__column--3"></div>
+                <div class="navMenu-icon__column navMenu-icon__column--4"></div>                    
+            </figure>
+        </button>
+
+            <h2 class="timerPage--title">Interval</h2>
+
+            <div class="page--digital__timerContainer">
+
+            </div>
+
+            <button class="abortTimer-btn">
+                ABORT TIMER
+            </button>
+
+        </section>
+
+        <!-- Alarm-sida -->
+        <!-- Alarm-sida -->
+
+
+        <section class="page page--alarm" id="alarm" style="display: none;" >
+        <!-- <section class="page page--alarm" id="alarm"> -->
+
+        <!-- Alarm-sida -->
+        <!-- Alarm-sida -->
+
+
+            <div class="page--alarm-bellContainer">
+
+            </div>
+
+
+            <h1 class="page--alarm__heading">Time's up!</h1>
+
+            <button class="page--alarm__btn">
+                SET NEW TIMER
+            </button>
+
+        </section>
+
+        
+
+        <section class="menu menu--hidden" id="menu" style="display: none;">
+            <button class="navMenu-closeBtn">
+                NAV-ikon här!
+            </button>
+
+            <div class="menu__navContainer">
+                <nav class="menu__nav">
+                    <a href="#" class="menu__item" onclick="navigateTo('analog-timer'); toggleMenu()">ANALOG TIMER</a>
+                    <a href="#" class="menu__item" onclick="navigateTo('digital-timer'); toggleMenu()">DIGITAL TIMER</a>
+
+                </nav>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer.js/dist/easytimer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
