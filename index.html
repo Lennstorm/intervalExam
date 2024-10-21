@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <title>IntervalTimer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <main class="main">
 
         <!-- Startsida -->
-        <!-- <section class="page page--landing" id="landing"> -->
-        <section class="page page--landing" id="landing" style="display: none;">
+        <section class="page page--landing page--active" id="landing">
+
             <div class="landing-wrapper">
                 <figure class="landing-animatedLogo">
                     <div class="line line--1"></div>
@@ -31,63 +34,67 @@
         </section>
 
         <!-- set timer-sida -->
-        <!-- set timer-sida -->
-
-        
-        <!-- <section class="page page--setTimer" id="setTimer" style="display: none;"> -->
-            <section class="page page--setTimer" id="setTimer"> 
-                
-        <!-- set timer-sida -->
-        <!-- set timer-sida -->                
-                
-
-            <button class="navMenu-openBtn">
-                <figure class="navMenu-icon">
-                    <div class="navMenu-icon__column navMenu-icon__column--1"></div>
-                    <div class="navMenu-icon__column navMenu-icon__column--2"></div>
-                    <div class="navMenu-icon__column navMenu-icon__column--3"></div>
-                    <div class="navMenu-icon__column navMenu-icon__column--4"></div>                    
-                </figure>
-            </button>
+        <section class="page page--setTimer page--inactive" id="setTimer">
+            <div class="page-header">
+                <button class="navMenu-openBtn">
+                    <figure class="navMenu-icon">
+                        <div class="navMenu-icon__row navMenu-icon__row--1"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--2"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--3"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--4"></div>
+                    </figure>
+                </button>
+            </div>
 
             <div class="setTimer-wrapper">
-                <figure class="setTimer-timer">
-                    <div class="setTimer-timer__hand setTimer-timer__hand--hour"></div>
-                    <div class="setTimer-timer__hand setTimer-timer__hand--minute"></div>
+                <div class="setTimer-column setTimer-column--left">
+                    <button class="setTimer-chevron setTimer-chevron--decrease">
+                        ⬇
+                    </button>
+                </div>
 
-                    <div class="setTimer-timer__mark"></div>
-                </figure>
+                <div class="setTimer-column setTimer-column--middle">
+                    <span class="setTimer-number">00</span>
+                    <span class="setTimer-label">minutes</span>
+                </div>
+
+                <div class="setTimer-column setTimer-column--right">
+                    <button class="setTimer-chevron setTimer-chevron--increase">
+                        ⬆
+                    </button>
+                </div>
             </div>
 
             <button class="setTimer-btn">
                 START TIMER
             </button>
-
         </section>
 
-
-        <!-- analog timer-sida -->
-        <!-- analog timer-sida -->
-        
-        <section class="page page--analog" id="analog-timer" style="display: none;">
-        <!-- <section class="page page--analog" id="analog-timer">  -->
-                
-        <!-- analog timer-sida -->
         <!-- analog timer-sida -->
 
-        <button class="navMenu-openBtn">
-            <figure class="navMenu-icon">
-                <div class="navMenu-icon__column navMenu-icon__column--1"></div>
-                <div class="navMenu-icon__column navMenu-icon__column--2"></div>
-                <div class="navMenu-icon__column navMenu-icon__column--3"></div>
-                <div class="navMenu-icon__column navMenu-icon__column--4"></div>                    
-            </figure>
-        </button>
+        <section class="page page--analog page--inactive" id="analog-timer">        
+            <div class="page-header">
+                <button class="navMenu-openBtn">
+                    <figure class="navMenu-icon">
+                        <div class="navMenu-icon__row navMenu-icon__row--1"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--2"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--3"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--4"></div>
+                    </figure>
+                </button>
 
-            <h2 class="timerPage--title">Interval</h2>
+                <div class="page-header__title">
+                    <h3>interval</h3>
+                </div>
+            </div>
 
             <div class="page--analog__timerContainer">
-
+                <figure class="analog-timer">
+                    <div class="analog-timer__hand analog-timer__hand--minutes"></div>
+                    <div class="analog-timer__hand analog-timer__hand--seconds"></div>
+                    <div class="analog-timer__center analog-timer__minutes--center"></div>
+                    <div class="analog-timer__center analog-timer__seconds--center"></div>
+                </figure>
             </div>
 
             <button class="abortTimer-btn">
@@ -97,68 +104,63 @@
         </section>
 
         <!-- digital timer-sida -->
-        <!-- digital timer-sida -->
-
-
-        <section class="page page--digital" id="digital-timer" style="display: none;">
-        <!-- <section class="page page--digital" id="digital-timer"> -->
-
-        <!-- digital timer-sida -->
-        <!-- digital timer-sida -->
-
-
-
-        <button class="navMenu-openBtn">
-            <figure class="navMenu-icon">
-                <div class="navMenu-icon__column navMenu-icon__column--1"></div>
-                <div class="navMenu-icon__column navMenu-icon__column--2"></div>
-                <div class="navMenu-icon__column navMenu-icon__column--3"></div>
-                <div class="navMenu-icon__column navMenu-icon__column--4"></div>                    
-            </figure>
-        </button>
-
-            <h2 class="timerPage--title">Interval</h2>
-
+        <section class="page page--digital page--inactive" id="digital-timer">
+            <div class="page-header">
+                <button class="navMenu-openBtn">
+                    <figure class="navMenu-icon">
+                        <div class="navMenu-icon__row navMenu-icon__row--1"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--2"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--3"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--4"></div>
+                    </figure>
+                </button>
+                <div class="page-header__title">
+                    <h3>interval</h3>
+                </div>
+            </div>
             <div class="page--digital__timerContainer">
-
+                <span id="digital-timer-display"> 7:32</span>
             </div>
 
             <button class="abortTimer-btn">
                 ABORT TIMER
             </button>
-
         </section>
 
         <!-- Alarm-sida -->
-        <!-- Alarm-sida -->
-
-
-        <section class="page page--alarm" id="alarm" style="display: none;" >
-        <!-- <section class="page page--alarm" id="alarm"> -->
-
-        <!-- Alarm-sida -->
-        <!-- Alarm-sida -->
-
-
-            <div class="page--alarm-bellContainer">
-
+        <section class="page page--alarm page--inactive" id="alarm" >        
+            <div class="page--alarm-alarmWrapper">
+                <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--1"></div>
+                <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--2"></div>
+                <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--3">
+                    <h1 class="page--alarm__heading">Time's up!</h1>
+                </div>
+                <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--4">
+                    <img class="page--alarm-alarmWrapper__circle--soundLeft" src="soundLeft.svg" alt="Sound left">
+                    <img class="page--alarm-alarmWrapper__circle--bell" src="bell.svg" alt="Bell">
+                    <img class="page--alarm-alarmWrapper__circle--soundRight" src="soundRight.svg" alt="Sound right">
+                </div>
             </div>
-
-
-            <h1 class="page--alarm__heading">Time's up!</h1>
-
             <button class="page--alarm__btn">
                 SET NEW TIMER
             </button>
 
         </section>
 
-        
 
-        <section class="menu menu--hidden" id="menu" style="display: none;">
-            <button class="navMenu-closeBtn">
-                NAV-ikon här!
-            </button>
+
+        <!-- Hidden-nav -->
+        <section class="page menu menu--hidden page--inactive" id="menu">        
+            <div class="page-header">
+                <button class="navMenu-closeBtn">
+                    <figure class="navMenu-icon">
+                        <div class="navMenu-icon__row navMenu-icon__row--1"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--2"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--3"></div>
+                        <div class="navMenu-icon__row navMenu-icon__row--4"></div>
+                    </figure>
+                </button>
+            </div>
 
             <div class="menu__navContainer">
                 <nav class="menu__nav">

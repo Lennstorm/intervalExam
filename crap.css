@@ -1,0 +1,40 @@
+.navMenu-openBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+    margin: 1rem 0 0 1rem;
+}
+
+.navMenu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navMenu-icon__row {
+    background-color: black;
+    width: 100%;
+    margin-bottom: .125rem;
+}
+
+.navMenu-icon__row--1 {
+    height: .75rem;
+}
+
+.navMenu-icon__row--2 {
+    height: .5rem;
+}
+
+.navMenu-icon__row--3 {
+    height: .250rem;
+}
+
+.navMenu-icon__row--4 {
+    height: .125rem;
+}
