@@ -123,6 +123,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .landing-animatedLogo {
@@ -493,7 +494,10 @@ body {
     align-items: center;
 }
 
-#menu {}
+#menu {
+    z-index: 999;
+    transition: transform 0.5 ease;
+}
 
 .menu .page-header {
     margin-bottom: auto;
@@ -521,10 +525,12 @@ body {
     justify-content: space-evenly;
 }
 
-.menu__item {
-    text-decoration: none;
+.menu__item {    
+    background: none;
+    border: none;
     color: #FFFFFF;
-    font-size: 2rem;    
+    font-size: 2rem;
+    cursor: pointer;    
 }
 
 .navMenu-closeBtn .navMenu-icon__row {

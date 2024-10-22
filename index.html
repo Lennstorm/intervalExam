@@ -21,8 +21,9 @@
         <!-- Startsida -->
         <section class="page page--landing page--active" id="landing">
 
+            <!-- <div class="landing-wrapper" onclick="navigateTo('setTimer')"> -->
             <div class="landing-wrapper">
-                <figure class="landing-animatedLogo">
+            <figure class="landing-animatedLogo">
                     <div class="line line--1"></div>
                     <div class="line line--2"></div>
                     <div class="line line--3"></div>
@@ -164,8 +165,9 @@
 
             <div class="menu__navContainer">
                 <nav class="menu__nav">
-                    <a href="#" class="menu__item" onclick="navigateTo('analog-timer'); toggleMenu()">ANALOG TIMER</a>
-                    <a href="#" class="menu__item" onclick="navigateTo('digital-timer'); toggleMenu()">DIGITAL TIMER</a>
+                    <button class="menu__item" data-target="analog-timer">ANALOG TIMER</button>
+                    <button class="menu__item" data-target="digital-timer">DIGITAL TIMER</button>
+                    <button class="menu__item" data-target="landing">START PAGE</button>
 
                 </nav>
             </div>
