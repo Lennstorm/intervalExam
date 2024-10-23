@@ -20,10 +20,8 @@
 
         <!-- Startsida -->
         <section class="page page--landing page--active" id="landing">
-
-            <!-- <div class="landing-wrapper" onclick="navigateTo('setTimer')"> -->
             <div class="landing-wrapper">
-            <figure class="landing-animatedLogo">
+                <figure class="landing-animatedLogo">
                     <div class="line line--1"></div>
                     <div class="line line--2"></div>
                     <div class="line line--3"></div>
@@ -50,7 +48,7 @@
             <div class="setTimer-wrapper">
                 <div class="setTimer-column setTimer-column--left">
                     <button class="setTimer-chevron setTimer-chevron--decrease">
-                        ⬇
+                        <img src="/assets/chevronLeft.svg" alt="Decrease Time">
                     </button>
                 </div>
 
@@ -61,7 +59,7 @@
 
                 <div class="setTimer-column setTimer-column--right">
                     <button class="setTimer-chevron setTimer-chevron--increase">
-                        ⬆
+                        <img src="/assets/chevronRight.svg" alt="Increase Time">
                     </button>
                 </div>
             </div>
@@ -73,7 +71,7 @@
 
         <!-- analog timer-sida -->
 
-        <section class="page page--analog page--inactive" id="analog-timer">        
+        <section class="page page--analog page--inactive" id="analog-timer">
             <div class="page-header">
                 <button class="navMenu-openBtn">
                     <figure class="navMenu-icon">
@@ -120,7 +118,7 @@
                 </div>
             </div>
             <div class="page--digital__timerContainer">
-                <span id="digital-timer-display"> 7:32</span>
+                <span id="digital-timer-display"> 00:00</span>
             </div>
 
             <button class="abortTimer-btn">
@@ -129,7 +127,7 @@
         </section>
 
         <!-- Alarm-sida -->
-        <section class="page page--alarm page--inactive" id="alarm" >        
+        <section class="page page--alarm page--inactive" id="alarm">
             <div class="page--alarm-alarmWrapper">
                 <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--1"></div>
                 <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--2"></div>
@@ -137,9 +135,11 @@
                     <h1 class="page--alarm__heading">Time's up!</h1>
                 </div>
                 <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--4">
-                    <img class="page--alarm-alarmWrapper__circle--soundLeft" src="/assets/soundLeft.svg" alt="Sound left">
+                    <img class="page--alarm-alarmWrapper__circle--soundLeft" src="/assets/soundLeft.svg"
+                        alt="Sound left">
                     <img class="page--alarm-alarmWrapper__circle--bell" src="/assets/bell.svg" alt="Bell">
-                    <img class="page--alarm-alarmWrapper__circle--soundRight" src="/assets/soundRight.svg" alt="Sound right">
+                    <img class="page--alarm-alarmWrapper__circle--soundRight" src="/assets/soundRight.svg"
+                        alt="Sound right">
                 </div>
             </div>
             <button class="page--alarm__btn">
@@ -151,7 +151,7 @@
 
 
         <!-- Hidden-nav -->
-        <section class="page menu menu--hidden page--inactive" id="menu">        
+        <section class="page menu menu--hidden page--inactive" id="menu">
             <div class="page-header">
                 <button class="navMenu-closeBtn">
                     <figure class="navMenu-icon">
