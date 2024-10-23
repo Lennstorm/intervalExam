@@ -2,12 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let timer = new easytimer.Timer();
     let setMinutes = 0;
+    animateLandingLogo();
 
     //Global event-delegation för att alla click ska registreras oavsett när/var man är
     document.body.addEventListener('click', function (event) {
         const target = event.target;
 
-        console.log('Clicked element:', target);
+        //console.log('Clicked element:', target);
 
         switch (true) {
             case target.closest('.landing-wrapper') !== null:
@@ -28,24 +29,28 @@ document.addEventListener('DOMContentLoaded', () => {
             case target.closest('.setTimer-column--left') !== null:
                 console.log('Decreasing time one minute');
                 if (setMinutes > 0) {
-                    setMinutes--;     //avaktiveras om vi behöver sekunder
-                    //setMinutes -=0.1; // aktiveras om vi behöver sekunder
+                    setMinutes--;                    
                     updateTimerDisplay(setMinutes);
                 }
                 break;
 
             case target.closest('.setTimer-column--right') !== null:
-                console.log('Increasing time');
-                setMinutes++;     //avaktiveras om vi behöver sekunder
-                //setMinutes +=0.1; // aktiveras om vi behöver sekunder
+                console.log('Increasing time one minute');
+                setMinutes++;                
                 updateTimerDisplay(setMinutes);
                 break;
 
             case target.closest('.setTimer-btn') !== null:
                 console.log('Starting Timer');
-                console.log('Navigating to startTimer page');
-                startTimer(setMinutes);
-                navigateTo('analog-timer');
+                if (setMinutes === 0) {
+                    console.log('Timer is set to zero. Staying on page')
+                } else {
+                    console.log('Navigating to startTimer page');
+                    startTimer(setMinutes);
+                    setTimeout(() =>{ 
+                        navigateTo('analog-timer');
+                    }, 500);
+                }
                 break;
 
 
@@ -71,18 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 case target.closest('.page--alarm__btn') !== null:
                 navigateTo('setTimer');
                 break;
-                        
-            /*            case target.closest('.') !== null:
-                        ();
-                        break;
-                        
-                        case target.closest('.') !== null:
-                        ();
-                        break;
-                        
-                        case target.closest('.') !== null:
-                        ();
-                        break;  */
         }
 
     });
@@ -90,14 +83,20 @@ document.addEventListener('DOMContentLoaded', () => {
     placeMarks();
 
     function updateTimerDisplay(minutes) {
-        document.querySelector('.setTimer-number').textContent = String(minutes).padStart(2, '0') //avaktiveras om vi behöver sekunder
-        //document.querySelector('.setTimer-number').textContent = minutes.toFixed(1); //aktiveras om vi behöver sekunder
+        document.querySelector('.setTimer-number').textContent = String(minutes).padStart(2, '0')
     }
 
     function startTimer(minutes) {
-        timer.start({ countdown: true, startValues: { minutes: minutes } });  //avaktiveras om vi behöver sekunder
-        //const seconds = Math.floor(minutes * 60); //aktiveras om vi behöver sekunder
-        //timer.start({ countdown: true, startValues: { seconds: seconds } }); //aktiveras om vi behöver sekunder
+        const startButton = document.querySelector('.setTimer-btn');
+        startButton.classList.add('clicked');
+
+        setTimeout(() => {
+            startButton.classList.remove('clicked');
+        }, 200);
+
+        timer.start({ countdown: true, startValues: { minutes: minutes } });        
+
+        document.querySelector('.analog-timer__hand--seconds').classList.add('start');
 
         const initialMinutesAngle = (minutes * 6) % 360;
         document.querySelector('.analog-timer__hand--minutes').style.transform = `translateX(-50%) rotate(${initialMinutesAngle}deg)`;
@@ -105,8 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //uppdatera digital och analog
         timer.addEventListener('secondsUpdated', function () {
             const timeValues = timer.getTimeValues();            
-            const totalSeconds = minutes * 60; //avaktiveras om vi behöver sekunder
-            //const totalSeconds = seconds; //aktiveras om vi behöver sekunder
+            const totalSeconds = minutes * 60;            
             const secondsPassed = totalSeconds - timer.getTotalTimeValues().seconds;
 
             // uppdatera digital timer
@@ -116,35 +114,24 @@ document.addEventListener('DOMContentLoaded', () => {
             updateAnalogTimer(timeValues.minutes, timeValues.seconds);
         });
 
-        
-
         // timer klar
         timer.addEventListener('targetAchieved', function (e) {
             navigateTo('alarm');
+            setMinutes = 0;
+            updateTimerDisplay(setMinutes);
         });
     }
 
     //uppdatera analog
     function updateAnalogTimer(currentMinutes, currentSeconds) {
         const minuteHand = document.querySelector('.analog-timer__hand--minutes');
-        const secondHand = document.querySelector('.analog-timer__hand--seconds');
 
-        //Matte för vinklarna
-//        const totalMinutes = Math.floor(totalSeconds / 60); //ger antal minuter
-//        const currentMinutes = totalMinutes - Math.floor(secondsPassed /60); // antal kvarvarande minuter
-//        const currentSeconds = secondsPassed % 60; //nuvarande sekund innevarande minut
-        
-
-       //rotationer moturs
-       const minutesRotation = (currentMinutes * 6) % 360;
-       const secondsRotation = (currentSeconds * 6) % 360;
-       
-       if (minuteHand) {
+        //rotationer moturs
+        const minutesRotation = (currentMinutes * 6) % 360;    
+        if (minuteHand) {
             minuteHand.style.transform = `translateX(-50%) rotate(${minutesRotation}deg)`;
-       }
-       if (secondHand) {
-            secondHand.style.transform = `translateX(-50%) rotate(${secondsRotation}deg)`
-       }      
+        }
+
     } 
 
 });
@@ -155,7 +142,7 @@ function navigateTo(pageId) {
     allPages.forEach(page => {
         if (page.id === pageId) {
             page.classList.remove('page--inactive');
-            page.classList.add('page--active');
+            page.classList.add('page--active');            
         } else {
             page.classList.remove('page--active');
             page.classList.add('page--inactive');
@@ -195,7 +182,44 @@ function resetAnalogTimer() {
     if (minuteHand) {
         minuteHand.style.transform = `translateX(-50%) rotate(0deg)`;
     }
+
     if (secondHand) {
-        secondHand.style.transform = `translateX(-50%) rotate(0deg)`;        
+        secondHand.classList.remove('start');
     }
+}
+
+
+//  ANIMATIONS
+
+function animateLandingLogo() {
+    const lines = document.querySelectorAll('.line');
+    const title = document.querySelector('.landing-title');
+    const tagline = document.querySelector('.landing-tagline');
+    
+
+    anime({
+        targets: Array.from(lines).reverse(),
+        translateX: ['-100vw', '0'],
+        easing: 'easeOutExpo',
+        duration: 1200,
+        delay: anime.stagger(300, {start: 500}), // Stagger mellan varje linje, startar efter 500ms
+        complete: function(){
+            anime({
+                targets: title,
+                translateY: ['20px', '0'],
+                opacity: [0, 1],
+                easing: 'easeOutExpo',
+                duration: 4000,
+            });
+            
+            anime({
+                targets: tagline,
+                translateY: ['20px', '0'],
+                opacity: [0, 1],
+                easing: 'easeOutExpo',
+                duration: 3000,
+                delay: 1200,
+        });
+        }
+    });
 }
