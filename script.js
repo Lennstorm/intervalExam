@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         timer.start({ countdown: true, startValues: { minutes: minutes } });        
 
-        document.querySelector('.analog-timer__hand--seconds').classList.add('start');
+        /* document.querySelector('.analog-timer__hand--seconds').classList.add('start'); */ /* AVAKTIVERAD FÖR ATT STYRA MED JS ISTÄLLET */
 
         const initialMinutesAngle = (minutes * 6) % 360;
         document.querySelector('.analog-timer__hand--minutes').style.transform = `translateX(-50%) rotate(${initialMinutesAngle}deg)`;
@@ -125,12 +125,20 @@ document.addEventListener('DOMContentLoaded', () => {
     //uppdatera analog
     function updateAnalogTimer(currentMinutes, currentSeconds) {
         const minuteHand = document.querySelector('.analog-timer__hand--minutes');
+        const secondHand = document.querySelector('.analog-timer__hand--seconds'); /* ÅTERSTÄLLD FÖR ATT STYRA MED JS IGEN */
 
         //rotationer moturs
         const minutesRotation = (currentMinutes * 6) % 360;    
+        const secondsRotation = (currentSeconds * 6) % 360; /* ÅTERSTÄLLD FÖR ATT STYRA MED JS IGEN */
+
+        // uppdatera visarnas positioner
         if (minuteHand) {
             minuteHand.style.transform = `translateX(-50%) rotate(${minutesRotation}deg)`;
         }
+        if (secondHand) {
+            secondHand.style.transform = `translateX(-50%) rotate(${secondsRotation}deg)`; /* ÅTERSTÄLLD FÖR ATT STYRA MED JS IGEN */
+        }
+
 
     } 
 

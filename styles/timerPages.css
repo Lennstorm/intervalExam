@@ -1,0 +1,116 @@
+/* analog timer-page */
+.page--analog {
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page--analog__timerContainer {
+    width: 18rem;
+    aspect-ratio: 1;    
+    margin: auto;
+    position: relative;
+    transform: translateY(25%);
+}
+
+.analog-timer {
+    width: 100%;
+    aspect-ratio: 1;    
+    border-radius: 50%;
+    position: relative;
+}
+
+.analog-timer__hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+    border-radius: .125rem .125rem 0 0;
+}
+
+.analog-timer__hand--minutes {
+    background-color: #000000;
+    width: .25rem;
+    height: 7rem;
+}
+
+.analog-timer__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.analog-timer__minutes--center {
+    background-color: #000000;
+    width: 1rem;
+    height: 1rem;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.analog-timer__hand--seconds {
+    background-color: #555555;
+    width: .125rem;
+    height: 7.8rem;
+    z-index: 2;
+    transform-origin: bottom center;
+}
+/* .analog-timer__hand--seconds.start {
+    animation: rotateSeconds 60s linear infinite;         BORTTAGEN FÖR ATT STYRA MED JS IGEN
+} */
+
+.analog-timer__seconds--center {
+    background-color: #555555;
+    width: .625rem;
+    height: .625rem;
+    z-index: 5;
+    border-radius: 50%;
+}
+
+.analog-timer__mark {
+    margin: none;
+    padding: none;
+    position: absolute;
+    width: .125rem;
+    height: .625rem;
+    border-radius: .125rem .125rem .125rem .125rem;
+    background-color: #222222;
+    top: 48.3%;
+    left: 49.6%;
+    transform-origin: center center;
+    transform: rotate(0deg) translateY(-50%);
+}
+
+.analog-timer__mark:nth-of-type(5n) {
+    width: .325rem;
+}
+
+/* digital timer-page */
+.page--digital {
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page--digital__timerContainer {
+    width: 18rem;
+    aspect-ratio: 1;    
+    margin: auto;
+    position: relative;
+    transform: translateY(25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#digital-timer-display {
+    font-size: 5rem;
+    font-style: bold;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 10%;
+}

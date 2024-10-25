@@ -1,0 +1,67 @@
+/* Landingpage */
+.page--landing {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform .1s ease;
+}
+
+.landing-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.landing-animatedLogo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .75rem;
+
+}
+
+.line {
+    background-color: white;
+    height: 2.2rem;
+    margin-left: .125rem;
+    transform: translateX(-100%);
+    opacity: 1;
+}
+
+.line--1 {
+    width: .125rem;
+}
+
+.line--2 {
+    width: .250rem;
+}
+
+.line--3 {
+    width: .5rem;
+}
+
+.line--4 {
+    width: .75rem;
+}
+
+
+.landing-title {
+    font-family: 'Righteous';
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    color: white;    
+    opacity: 0;
+}
+
+.landing-tagline {
+    font-size: .875rem;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    color: white;
+    margin: .75rem;
+    opacity: 0;
+}

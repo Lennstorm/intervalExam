@@ -1,0 +1,100 @@
+  /* KEYFRAMES  */  
+
+  @keyframes swingBell {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(5deg);
+    }
+    66% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes pulseSound {
+    0%, 100% {
+        transform: translate(1rem, -2rem) scale(1);
+        filter: blur(0);
+    }
+    25% {
+    }
+    50% {
+        transform: translate(.8rem, -2.2rem) scale(1.2);
+        filter: blur(2px);
+    }
+    75% {
+        filter: blur(1px);
+    }
+}
+
+@keyframes pulseSoundRight {
+    0%, 100% {
+        transform: translate(-1rem, -2rem) scale(1);
+        filter: blur(0);
+    }
+    25% {
+        filter: blur(1px);
+    }
+    50% {
+        transform: translate(-.8rem, -2.2rem) scale(1.2);
+        filter: blur(2px);
+    }
+    75% {
+        filter: blur(1px);
+    }
+}
+
+/* Cirklarna på alarmsidan */
+@keyframes colorShift {
+    0% {   
+        background-image: radial-gradient(circle, #262626 0%, #262626 50%, #393939 100%);
+        filter: brightness(.7);
+    }    
+    100% {
+        background-image: radial-gradient(circle, #262626 0%, #262626 50%, #393939 100%);
+        filter: brightness(.65);
+    }
+}
+
+/* Animera sekundvisaren */
+/* @keyframes rotateSeconds {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }                                                       BORTTAGEN FÖR ATT ANIMERA MED JS IGEN
+    to {
+        transform: translateX(-50%) rotate(-360deg);
+    }
+} */
+
+/* Animera z-index */
+@keyframes zetaIndexIn {
+    0% {
+        z-index: 1;
+    }
+    99% {
+        z-index: 1;
+    }
+    100% {
+        z-index: 2;
+    }
+
+}
+
+@keyframes zetaIndexOut {
+    0% {
+        z-index: 2;
+    }
+    99% {
+        z-index: 2;
+    }
+    100% {
+        z-index: 1;
+    }
+}
+
+@keyframes alarmPageActive {
+    0%, 100% {
+        transform: translateY(0);
+    }
+}

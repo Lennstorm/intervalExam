@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/alarmPage.css">
+    <link rel="stylesheet" href="styles/landingPage.css">
+    <link rel="stylesheet" href="styles/setTimerPage.css">
+    <link rel="stylesheet" href="styles/timerPages.css">
     <title>IntervalTimer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -19,7 +24,7 @@
     <main class="main">
 
         <!-- Startsida -->
-        <section class="page page--landing page--active" id="landing">
+        <section class="page page--left page--landing page--active" id="landing">
             <div class="landing-wrapper">
                 <figure class="landing-animatedLogo">
                     <div class="line line--1"></div>
@@ -33,7 +38,7 @@
         </section>
 
         <!-- set timer-sida -->
-        <section class="page page--setTimer page--inactive" id="setTimer">
+        <section class="page page--left page--setTimer page--inactive" id="setTimer">
             <div class="page-header">
                 <button class="navMenu-openBtn">
                     <figure class="navMenu-icon">
@@ -71,7 +76,7 @@
 
         <!-- analog timer-sida -->
 
-        <section class="page page--analog page--inactive" id="analog-timer">
+        <section class="page page--right page--analog page--inactive" id="analog-timer">
             <div class="page-header">
                 <button class="navMenu-openBtn">
                     <figure class="navMenu-icon">
@@ -103,7 +108,7 @@
         </section>
 
         <!-- digital timer-sida -->
-        <section class="page page--digital page--inactive" id="digital-timer">
+        <section class="page page--right page--digital page--inactive" id="digital-timer">
             <div class="page-header">
                 <button class="navMenu-openBtn">
                     <figure class="navMenu-icon">
@@ -127,7 +132,7 @@
         </section>
 
         <!-- Alarm-sida -->
-        <section class="page page--alarm page--inactive" id="alarm">
+        <section class="page page--down page--alarm page--inactive" id="alarm">
             <div class="page--alarm-alarmWrapper">
                 <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--1"></div>
                 <div class="page--alarm-alarmWrapper__circle page--alarm-alarmWrapper__circle--2"></div>

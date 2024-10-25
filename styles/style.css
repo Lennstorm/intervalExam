@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.main {
+    background-color: #EEEEEE;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;    
+    /* transition: transform .5 ease;  */   
+}
+
+.page--right.page--inactive {
+    transform: translateX(100vw);
+    transition: transform .9s ease;
+    animation: zetaIndexOut .9s ;
+    
+}
+
+.page--left.page--inactive {
+    transform: translateX(-100vw);    
+    transition: transform .9s ease;
+    animation: zetaIndexOut .9s ;
+}
+
+.page--down.page--inactive {
+    transform: translateY(100vh);    
+    transition: transform .9s ease;
+    animation: zetaIndexOut .9s ;
+}
+
+.page--down.page--active {
+    animation: alarmPageActive .1s;    
+    transform: translateY(0);
+}
+
+.page--active {
+    transform: translateX(0);
+    animation: zetaIndexIn .9s;
+    
+    /* transition: transform .2s ease; */
+}
+/* .page--active.page--landing {
+    transform: translateX(0);
+} */
+
+button {
+    transition: transform .3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.page-header {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.page-header__title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+.page-header__title h3 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    letter-spacing: 10%;
+}
+
+.navMenu-openBtn {
+    background: none;
+    border: none;    
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+    margin: 1rem 0 0 1rem;
+}
+
+.navMenu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    width: 100%;
+    height: 100%;
+    transition: transform .3s ease;
+}
+
+.navMenu-icon__row {
+    background-color: black;
+    width: 100%;
+    margin-bottom: .125rem;
+    transition: transform .3s ease, scale .3s ease;
+    transform-origin: center;
+}
+
+.navMenu-icon:hover .navMenu-icon__row {
+    transform: scale(1.1);
+    border-radius: 5%;
+
+}
+
+.navMenu-icon:active .navMenu-icon__row:nth-child(odd) {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.navMenu-icon:active .navMenu-icon__row:nth-child(even) {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+.navMenu-icon__row--1 {
+    height: .75rem;
+}
+
+.navMenu-icon__row--2 {
+    height: .5rem;
+}
+
+.navMenu-icon__row--3 {
+    height: .250rem;
+}
+
+.navMenu-icon__row--4 {
+    height: .125rem;
+}
+
+.abortTimer-btn {
+    margin: auto 0 2rem 0;
+    border: 2px solid rgba(34, 34, 34, 0.6);
+    border-radius: .375rem;
+    width: 8.25rem;
+    height: 2.5rem;
+    color: rgba(34, 34, 34, 0.6);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: .1;
+    cursor: pointer;
+}
+
+
+
+/* Nav-page */
+/* .menu--hidden {
+    
+} */
+
+#menu {
+    background-color: #222222;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    z-index: 999;
+    transition: transform .6s ease-in-out;
+}
+
+#menu.page--active {
+    transform: translateY(100vh);
+}
+
+#menu.page--inactive {
+    transform: translateY(0);    
+}
+
+.menu .page-header {
+    margin-bottom: auto;
+}
+
+.navMenu-closeBtn {
+    background: none;
+    border: none;    
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+    margin: 1rem 0 0 1rem;
+}
+
+.menu__navContainer {
+    margin: 0 auto auto auto;
+}
+
+.menu__nav {
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu__item {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.navMenu-closeBtn .navMenu-icon__row {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
